@@ -2,29 +2,42 @@
 
 int main()
 {
-    int score;
+    double firstNum;
+    double secondNum;
+    char op;
 
-    std::cout << "Enter your score : ";
-    std::cin >> score;
+    std::cout << "Enter a number:";
+    std::cin >> firstNum;
+    std::cout << "Enter an operator:";
+    std::cin >> op;
+    std::cout << "Enter a number:";
+    std::cin >> secondNum;
 
-    if (score >= 90 && score <= 100)
+    if (op == '*')
     {
-        std::cout << "Excellent";
+        std::cout << "Result : " << (firstNum * secondNum);
     }
-    else if (score >= 70 && score <= 89)
+    else if (op == '+')
     {
-        std::cout << "Good";
+        std::cout << "Result : " << (firstNum + secondNum);
     }
-    else if (score >= 50 && score <= 69)
+    else if (op == '-')
     {
-        std::cout << "Pass";
+        std::cout << "Result : " << (firstNum - secondNum);
     }
-    else if (score >= 0 && score <= 49)
+    else if (op == '/')
     {
-        std::cout << "Fail";
+        if (secondNum == 0)
+        {
+            std::cout << "Invalid";
+        }
+        else
+        {
+            std::cout << "Result : " << (firstNum / secondNum);
+        }
     }
     else
     {
-        std::cout << "Invalid";
+        std::cout << "Invalid Operator";
     }
 }
